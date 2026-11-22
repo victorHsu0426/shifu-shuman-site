@@ -17,7 +17,7 @@
 .tap-play span{width:56px;height:56px;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center}
 </style></head><body>
 <header><div class="nav"><a class="brand" href="index.html">殊曼讀心<small>shifu-shuman.org</small></a><input type="checkbox" id="menu-toggle"><label for="menu-toggle" class="menu-btn" aria-label="選單">☰</label><nav class="links"><a href="index.html">首頁</a><a href="jiane.html">見額法師</a><a href="faxun.html">法訊</a><a href="jueyin.html">佛法覺音</a><a href="shorts.html">短開示</a><a href="juelv.html">菩薩覺旅</a><a href="jiaowen/index.html">殊曼覺文</a><a href="juejian.html">菩提覺見</a><a href="books.html">出版著作</a><a href="wallpaper.html">法語桌布下載</a></nav></div></header>
-<main><div class="card"><h2>短開示</h2>
+<main><div class="card"><h2 style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">短開示 <a class="btn" href="https://github.com/victorhsu0426/shifu-shuman-site/archive/refs/heads/main.zip">全部下載</a></h2>
 <p class="meta">師父短影片合集，點一下全螢幕觀看。shorts 資料夾有新片就會自動出現在這裡。</p>
 <div class="vgrid" id="sv-grid"><p class="meta">載入中……</p></div>
 <p class="meta" id="sv-count" style="text-align:center"></p>
@@ -32,10 +32,12 @@ var vids=files.filter(function(f){return /\.mp4$/i.test(f.name);})
 if(!vids.length)throw 0;
 document.getElementById("sv-grid").innerHTML=vids.map(function(v){
 var d=v.name.replace(/\.mp4$/i,"");
-return '<div class="sv-item tap"><video preload="metadata" playsinline><source src="'+v.download_url+'" type="video/mp4"></video><span class="tap-play"><span>▶</span></span><p class="t">'+d+'</p></div>';
+return '<div class="sv-item tap"><video preload="metadata" playsinline><source src="'+v.download_url+'" type="video/mp4"></video><span class="tap-play"><span>▶</span></span><p class="t">'+d+'</p><p style="padding:0 14px 14px;margin:0"><a class="btn dl" href="shorts/'+encodeURIComponent(v.name)+'" download="'+v.name+'">下載</a></p></div>';
 }).join("");
 document.getElementById("sv-count").textContent="共 "+vids.length+" 部";
-document.getElementById("sv-grid").addEventListener("click",function(e){var s=e.target.closest(".sv-item");if(!s)return;var v=s.querySelector("video");if(!v)return;try{var p=v.play();if(v.requestFullscreen)v.requestFullscreen();else if(v.webkitEnterFullscreen)v.webkitEnterFullscreen();if(p&&p.catch)p.catch(function(){});}catch(err){}});
+function showInline(v){v.setAttribute("controls","");v.style.pointerEvents="auto";var b=v.parentNode.querySelector(".tap-play");if(b)b.style.display="none";}
+document.addEventListener("fullscreenchange",function(){if(document.fullscreenElement)return;var vs=document.querySelectorAll("video");for(var i=0;i<vs.length;i++){vs[i].pause();showInline(vs[i]);}});
+document.getElementById("sv-grid").addEventListener("click",function(e){if(e.target.closest("a.dl"))return;var s=e.target.closest(".sv-item");if(!s)return;var v=s.querySelector("video");if(!v)return;v.onwebkitendfullscreen=function(){v.pause();showInline(v);};try{var p=v.play();if(p&&p.catch)p.catch(function(){});if(v.requestFullscreen){var r=v.requestFullscreen();if(r&&r.catch)r.catch(function(){});}else if(v.webkitEnterFullscreen)v.webkitEnterFullscreen();}catch(err){}setTimeout(function(){if(!(document.fullscreenElement||v.webkitDisplayingFullscreen))showInline(v);},800);});
 })
 .catch(function(){
 document.getElementById("sv-grid").innerHTML='<p class="meta">暫時讀不到清單請直接到 <a href="https://www.youtube.com/@Shuman_Shi/shorts" target="_blank" rel="noopener">YouTube Shorts</a> 觀看。</p>';
