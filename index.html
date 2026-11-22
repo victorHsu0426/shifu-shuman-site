@@ -45,7 +45,7 @@
 <p class="meta">每次重整換一部點一下全螢幕觀看。<a href="shorts.html">看全部短片</a> · 更多短片請見 <a href="https://www.youtube.com/@Shuman_Shi/shorts" target="_blank" rel="noopener">YouTube Shorts @Shuman_Shi</a>。</p>
 </div>
 <script>
-fetch("https://api.github.com/repos/victorhsu0426/shifu-shuman-site/contents/shorts")
+fetch("shorts.json")
 .then(function(r){if(!r.ok)throw 0;return r.json();})
 .then(function(files){
 var vids=files.filter(function(f){return /\.mp4$/i.test(f.name);})
@@ -55,7 +55,9 @@ var idx=0;
 try{idx=parseInt(localStorage.getItem("sv_idx")||"0",10)||0;}catch(err){}
 var v=vids[idx%vids.length];
 try{localStorage.setItem("sv_idx",String(idx+1));}catch(err){}
-document.getElementById("shorts-list").innerHTML='<div class="tap"><video preload="metadata" playsinline poster="shorts/'+encodeURIComponent(v.name.replace(/\.mp4$/i,".jpg"))+'"><source src="'+v.download_url+'" type="video/mp4"></video><span class="tap-play"><span>▶</span></span></div><p class="meta" style="text-align:center">'+v.name.replace(/\.mp4$/i,"")+'</p><p style="text-align:center"><a class="btn" href="shorts/'+encodeURIComponent(v.name)+'" download="'+v.name+'">下載這部</a></p>';
+var caps={"07182026QA3_YT.mp4":"你是在學佛還是在累積優越感？\n\n吃素、誦經、打坐讓我們變得更善但你有沒有在不知不覺中，開始看不起沒做到的人？👀\n\n一旦修行的心走偏了，養成了執著與批判就失去了它的純粹。正如《金剛經》所言看透善法的緣起性空、不把「我很善良」掛在心上放下那份傲慢才是真正自在的善法🌿✨。別讓你的修行走錯了方向。🕊️"};
+function cap(n){return caps[n]||n.replace(/\.mp4$/i,"");}
+document.getElementById("shorts-list").innerHTML='<div class="tap"><video preload="metadata" playsinline poster="shorts/'+encodeURIComponent(v.name.replace(/\.mp4$/i,".jpg"))+'"><source src="shorts/'+encodeURIComponent(v.name)+'" type="video/mp4"></video><span class="tap-play"><span>▶</span></span></div><p class="meta" style="text-align:center;white-space:pre-line">'+cap(v.name)+'</p><p style="text-align:center"><a class="btn" href="shorts/'+encodeURIComponent(v.name)+'" download="'+v.name+'">下載這部</a></p>';
 function showInline(v){v.setAttribute("controls","");v.style.pointerEvents="auto";var b=v.parentNode.querySelector(".tap-play");if(b)b.style.display="none";}
 document.addEventListener("fullscreenchange",function(){if(document.fullscreenElement)return;var vs=document.querySelectorAll("video");for(var i=0;i<vs.length;i++){vs[i].pause();showInline(vs[i]);}});
 document.getElementById("shorts-list").addEventListener("click",function(e){if(e.target.closest("a"))return;var v=this.querySelector("video");if(!v)return;v.onwebkitendfullscreen=function(){v.pause();showInline(v);};try{var p=v.play();if(p&&p.catch)p.catch(function(){});if(v.requestFullscreen){var r=v.requestFullscreen();if(r&&r.catch)r.catch(function(){});}else if(v.webkitEnterFullscreen)v.webkitEnterFullscreen();}catch(err){}setTimeout(function(){if(!(document.fullscreenElement||v.webkitDisplayingFullscreen))showInline(v);},800);});

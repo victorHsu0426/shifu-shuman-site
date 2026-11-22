@@ -25,15 +25,17 @@
 <p>另見 <a class="btn" href="https://www.youtube.com/@Shuman_Shi/shorts" target="_blank" rel="noopener">YouTube Shorts @Shuman_Shi</a></p>
 </div></main>
 <script>
-fetch("https://api.github.com/repos/victorhsu0426/shifu-shuman-site/contents/shorts")
+fetch("shorts.json")
 .then(function(r){if(!r.ok)throw 0;return r.json();})
 .then(function(files){
 var vids=files.filter(function(f){return /\.mp4$/i.test(f.name);})
 .sort(function(a,b){return b.name.localeCompare(a.name);});
 if(!vids.length)throw 0;
 document.getElementById("sv-grid").innerHTML=vids.map(function(v){
-var d=v.name.replace(/\.mp4$/i,"");
-return '<div class="sv-item tap"><video preload="metadata" playsinline poster="shorts/'+encodeURIComponent(v.name.replace(/\.mp4$/i,".jpg"))+'"><source src="'+v.download_url+'" type="video/mp4"></video><span class="tap-play"><span>▶</span></span><p class="t">'+d+'</p><p style="padding:0 14px 14px;margin:0;margin-top:auto"><a class="btn dl" href="shorts/'+encodeURIComponent(v.name)+'" download="'+v.name+'">下載</a></p></div>';
+var caps={"07182026QA3_YT.mp4":"你是在學佛，還是在累積優越感？\n\n吃素、誦經、打坐讓我們變得更善但你有沒有在不知不覺中，開始看不起沒做到的人？👀\n\n一旦修行的心走偏了，養成了執著與批判就失去了它的純粹。正如《金剛經》所言看透善法的緣起性空、不把「我很善良」掛在心上放下那份傲慢才是真正自在的善法🌿✨。別讓你的修行走錯了方向。🕊️"};
+function cap(n){return caps[n]||n.replace(/\.mp4$/i,"");}
+var d=cap(v.name);
+return '<div class="sv-item tap"><video preload="metadata" playsinline poster="shorts/'+encodeURIComponent(v.name.replace(/\.mp4$/i,".jpg"))+'"><source src="shorts/'+encodeURIComponent(v.name)+'" type="video/mp4"></video><span class="tap-play"><span>▶</span></span><p class="t" style="white-space:pre-line">'+d+'</p><p style="padding:0 14px 14px;margin:0;margin-top:auto"><a class="btn dl" href="shorts/'+encodeURIComponent(v.name)+'" download="'+v.name+'">下載</a></p></div>';
 }).join("");
 document.getElementById("sv-count").textContent="共 "+vids.length+" 部";
 function showInline(v){v.setAttribute("controls","");v.style.pointerEvents="auto";var b=v.parentNode.querySelector(".tap-play");if(b)b.style.display="none";}
