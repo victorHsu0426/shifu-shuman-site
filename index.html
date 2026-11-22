@@ -26,6 +26,27 @@
 <main>
 <img src="images/banner-buzaihu-bupa.jpg" alt="見額法師《不在乎不要怕》" fetchpriority="high" style="width:100%;height:auto;border-radius:12px;display:block;margin-bottom:16px">
 <div class="card" style="margin-top:20px">
+<h2>師父短開示</h2>
+<div class="grid cols2" id="shorts-list"><p class="meta">載入中……</p></div>
+<p class="meta">每天更新。更多短片請見 <a href="https://www.youtube.com/@Shuman_Shi/shorts" target="_blank" rel="noopener">YouTube Shorts @Shuman_Shi</a>。</p>
+</div>
+<script>
+fetch("https://api.github.com/repos/victorhsu0426/shifu-shuman-site/contents/shorts")
+.then(function(r){if(!r.ok)throw 0;return r.json();})
+.then(function(files){
+var vids=files.filter(function(f){return /\.mp4$/i.test(f.name);})
+.sort(function(a,b){return b.name.localeCompare(a.name);}).slice(0,8);
+if(!vids.length)throw 0;
+document.getElementById("shorts-list").innerHTML=vids.map(function(v){
+var d=v.name.replace(/\.mp4$/i,"");
+return '<div><video controls preload="metadata" playsinline style="width:100%;max-width:360px;height:auto;border-radius:12px;display:block;margin:0 auto;background:#000"><source src="'+v.download_url+'" type="video/mp4"></video><p class="meta" style="text-align:center">'+d+'</p></div>';
+}).join("");
+})
+.catch(function(){
+document.getElementById("shorts-list").innerHTML='<p class="meta">暫時讀不到清單，請直接到 <a href="https://www.youtube.com/@Shuman_Shi/shorts" target="_blank" rel="noopener">YouTube Shorts</a> 觀看。</p>';
+});
+</script>
+<div class="card" style="margin-top:20px">
 <h2>最新法訊</h2>
 <div class="grid cols2">
 <a href="faxun.html"><img src="images/index-000.jpg" alt="最新法訊海報一，點看法訊詳情" loading="lazy"></a>
