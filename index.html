@@ -8,11 +8,12 @@
 <meta name="theme-color" content="#faf7f0">
 <link rel="stylesheet" href="style.css">
 <style>
-.car-wrap{display:flex;align-items:center;gap:8px}
-.car-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px;flex:1;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
-.car-slide{min-width:min(78%,300px);scroll-snap-align:center}
-.car-slide video{width:100%;aspect-ratio:9/16;height:auto;border-radius:12px;display:block;background:#000}
-.car-btn{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:22px;line-height:1;cursor:pointer;color:var(--accent-d)}
+/* 每日一部 */
+#shorts-list video{width:100%;aspect-ratio:9/16;height:auto;border-radius:12px;display:block;background:#000}
+.tap{position:relative;cursor:pointer}
+.tap video{pointer-events:none}
+.tap-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.tap-play span{width:56px;height:56px;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center}
 </style>
 </head>
 <body>
@@ -34,32 +35,22 @@
 <img src="images/banner-buzaihu-bupa.jpg" alt="見額法師《不在乎不要怕》" fetchpriority="high" style="width:100%;height:auto;border-radius:12px;display:block;margin-bottom:16px">
 <div class="card" style="margin-top:20px">
 <h2>師父短開示</h2>
-<div class="car-wrap">
-<button class="car-btn" id="car-prev" aria-label="上一部">‹</button>
-<div class="car-track" id="shorts-list"><p class="meta">載入中……</p></div>
-<button class="car-btn" id="car-next" aria-label="下一部">›</button>
-</div>
-<p class="meta" id="car-count" style="text-align:center"></p>
-<p class="meta">每天更新可左右滑動。更多短片請見 <a href="https://www.youtube.com/@Shuman_Shi/shorts" target="_blank" rel="noopener">YouTube Shorts @Shuman_Shi</a>。</p>
+<div id="shorts-list" style="max-width:360px;margin:0 auto"><p class="meta" style="text-align:center">載入中……</p></div>
+<p class="meta">每次重整換一部點一下全螢幕觀看。更多短片請見 <a href="https://www.youtube.com/@Shuman_Shi/shorts" target="_blank" rel="noopener">YouTube Shorts @Shuman_Shi</a>。</p>
 </div>
 <script>
 fetch("https://api.github.com/repos/victorhsu0426/shifu-shuman-site/contents/shorts")
 .then(function(r){if(!r.ok)throw 0;return r.json();})
 .then(function(files){
 var vids=files.filter(function(f){return /\.mp4$/i.test(f.name);})
-.sort(function(a,b){return b.name.localeCompare(a.name);}).slice(0,8);
+.sort(function(a,b){return b.name.localeCompare(a.name);});
 if(!vids.length)throw 0;
-document.getElementById("shorts-list").innerHTML=vids.map(function(v){
-var d=v.name.replace(/\.mp4$/i,"");
-return '<div class="car-slide"><video controls preload="metadata" playsinline><source src="'+v.download_url+'" type="video/mp4"></video><p class="meta" style="text-align:center">'+d+'</p></div>';
-}).join("");
-var track=document.getElementById("shorts-list");
-var count=document.getElementById("car-count");
-function step(){return track.children[0].offsetWidth+12;}
-function upd(){count.textContent=(Math.round(track.scrollLeft/step())+1)+" / "+vids.length;}
-track.addEventListener("scroll",upd,{passive:true});upd();
-document.getElementById("car-prev").onclick=function(){track.scrollBy({left:-step(),behavior:"smooth"});};
-document.getElementById("car-next").onclick=function(){track.scrollBy({left:step(),behavior:"smooth"});};
+var idx=0;
+try{idx=parseInt(localStorage.getItem("sv_idx")||"0",10)||0;}catch(err){}
+var v=vids[idx%vids.length];
+try{localStorage.setItem("sv_idx",String(idx+1));}catch(err){}
+document.getElementById("shorts-list").innerHTML='<div class="tap"><video preload="metadata" playsinline><source src="'+v.download_url+'" type="video/mp4"></video><span class="tap-play"><span>▶</span></span></div><p class="meta" style="text-align:center">'+v.name.replace(/\.mp4$/i,"")+'</p>';
+document.getElementById("shorts-list").addEventListener("click",function(){var v=this.querySelector("video");if(!v)return;try{var p=v.play();if(v.requestFullscreen)v.requestFullscreen();else if(v.webkitEnterFullscreen)v.webkitEnterFullscreen();if(p&&p.catch)p.catch(function(){});}catch(err){}});
 })
 .catch(function(){
 document.getElementById("shorts-list").innerHTML='<p class="meta">暫時讀不到清單，請直接到 <a href="https://www.youtube.com/@Shuman_Shi/shorts" target="_blank" rel="noopener">YouTube Shorts</a> 觀看。</p>';
@@ -131,7 +122,8 @@ document.getElementById("shorts-list").innerHTML='<p class="meta">暫時讀不�
 <p class="meta">本站由 Google Sites 搬遷至 shifu-shuman.org 自管靜態站。圖片已轉存本站，剩餘部分陸續補上。</p>
 </main>
 <footer>
-Copyright © 2026 殊曼讀心<br>Email : buddhaworld2000@gmail.com
+Copyright © 2026 殊曼讀心<br>Email : buddhaworld2000@gmail.com<br>
+<span class="meta">累計到訪 <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fshifu-shuman.org&title=%E5%88%B0%E8%A8%AA&edge_flat=true" alt="累計到訪人次" loading="lazy" style="vertical-align:middle"></span>
 </footer>
 </body>
 </html>
