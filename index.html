@@ -7,6 +7,13 @@
 <meta name="description" content="殊曼讀心：見額法師弘法、法訊、佛法覺音、殊曼覺文、出版著作。">
 <meta name="theme-color" content="#faf7f0">
 <link rel="stylesheet" href="style.css">
+<style>
+.car-wrap{display:flex;align-items:center;gap:8px}
+.car-track{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px;flex:1;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.car-slide{min-width:min(78%,300px);scroll-snap-align:center}
+.car-slide video{width:100%;aspect-ratio:9/16;height:auto;border-radius:12px;display:block;background:#000}
+.car-btn{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:22px;line-height:1;cursor:pointer;color:var(--accent-d)}
+</style>
 </head>
 <body>
 <header><div class="nav">
@@ -27,8 +34,13 @@
 <img src="images/banner-buzaihu-bupa.jpg" alt="見額法師《不在乎不要怕》" fetchpriority="high" style="width:100%;height:auto;border-radius:12px;display:block;margin-bottom:16px">
 <div class="card" style="margin-top:20px">
 <h2>師父短開示</h2>
-<div class="grid cols2" id="shorts-list"><p class="meta">載入中……</p></div>
-<p class="meta">每天更新。更多短片請見 <a href="https://www.youtube.com/@Shuman_Shi/shorts" target="_blank" rel="noopener">YouTube Shorts @Shuman_Shi</a>。</p>
+<div class="car-wrap">
+<button class="car-btn" id="car-prev" aria-label="上一部">‹</button>
+<div class="car-track" id="shorts-list"><p class="meta">載入中……</p></div>
+<button class="car-btn" id="car-next" aria-label="下一部">›</button>
+</div>
+<p class="meta" id="car-count" style="text-align:center"></p>
+<p class="meta">每天更新可左右滑動。更多短片請見 <a href="https://www.youtube.com/@Shuman_Shi/shorts" target="_blank" rel="noopener">YouTube Shorts @Shuman_Shi</a>。</p>
 </div>
 <script>
 fetch("https://api.github.com/repos/victorhsu0426/shifu-shuman-site/contents/shorts")
@@ -39,8 +51,15 @@ var vids=files.filter(function(f){return /\.mp4$/i.test(f.name);})
 if(!vids.length)throw 0;
 document.getElementById("shorts-list").innerHTML=vids.map(function(v){
 var d=v.name.replace(/\.mp4$/i,"");
-return '<div><video controls preload="metadata" playsinline style="width:100%;max-width:360px;height:auto;border-radius:12px;display:block;margin:0 auto;background:#000"><source src="'+v.download_url+'" type="video/mp4"></video><p class="meta" style="text-align:center">'+d+'</p></div>';
+return '<div class="car-slide"><video controls preload="metadata" playsinline><source src="'+v.download_url+'" type="video/mp4"></video><p class="meta" style="text-align:center">'+d+'</p></div>';
 }).join("");
+var track=document.getElementById("shorts-list");
+var count=document.getElementById("car-count");
+function step(){return track.children[0].offsetWidth+12;}
+function upd(){count.textContent=(Math.round(track.scrollLeft/step())+1)+" / "+vids.length;}
+track.addEventListener("scroll",upd,{passive:true});upd();
+document.getElementById("car-prev").onclick=function(){track.scrollBy({left:-step(),behavior:"smooth"});};
+document.getElementById("car-next").onclick=function(){track.scrollBy({left:step(),behavior:"smooth"});};
 })
 .catch(function(){
 document.getElementById("shorts-list").innerHTML='<p class="meta">暫時讀不到清單，請直接到 <a href="https://www.youtube.com/@Shuman_Shi/shorts" target="_blank" rel="noopener">YouTube Shorts</a> 觀看。</p>';
