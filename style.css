@@ -36,6 +36,15 @@ nav.links a:first-child{border-top:0}
   nav.links a:hover{color:var(--accent);text-decoration:underline}
 }
 
+/* ---------- hero-new (高度/深度/廣度改版) ---------- */
+.hero-new h1{margin:.2em 0;font-size:1.7rem;line-height:1.35}
+@media(min-width:720px){.hero-new h1{font-size:2.1rem}}
+.eyebrow{display:inline-block;font-size:.85rem;color:var(--accent-d);border:1px solid var(--line);
+  border-radius:999px;padding:4px 12px;background:#fdfbf6;margin-bottom:8px}
+.lede{font-size:1.05rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:4px;margin:12px 0 4px}
+@media(max-width:559px){.cta-row .btn{width:100%}}
+
 /* ---------- layout ---------- */
 main{max-width:var(--maxw);margin:0 auto;padding:20px var(--pad) 64px}
 .hero img,.card img{width:100%;height:auto;border-radius:12px;display:block;background:#eee}
