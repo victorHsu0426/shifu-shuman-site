@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://shifu-shuman.org/</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://shifu-shuman.org/jiane.html</loc><lastmod>2026-11-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://shifu-shuman.org/about-me.html</loc><lastmod>2026-11-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://shifu-shuman.org/faxun.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://shifu-shuman.org/jueyin.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://shifu-shuman.org/dharma-talks.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://shifu-shuman.org/shorts.html</loc><lastmod>2026-11-22</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://shifu-shuman.org/juelv.html</loc><lastmod>2026-11-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://shifu-shuman.org/jiaowen/index.html</loc><lastmod>2026-11-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://shifu-shuman.org/juejian.html</loc><lastmod>2026-11-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://shifu-shuman.org/pilgrimage.html</loc><lastmod>2026-11-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://shifu-shuman.org/articles/index.html</loc><lastmod>2026-11-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://shifu-shuman.org/faq.html</loc><lastmod>2026-11-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://shifu-shuman.org/books.html</loc><lastmod>2026-11-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://shifu-shuman.org/wallpaper.html</loc><lastmod>2026-11-22</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://shifu-shuman.org/jiaowen/bantubufei.html</loc><lastmod>2026-11-22</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://shifu-shuman.org/jiaowen/fanfan.html</loc><lastmod>2026-11-22</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://shifu-shuman.org/jiaowen/fangwei.html</loc><lastmod>2026-11-22</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://shifu-shuman.org/jiaowen/fodan.html</loc><lastmod>2026-11-22</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://shifu-shuman.org/jiaowen/jueyuan.html</loc><lastmod>2026-11-22</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://shifu-shuman.org/jiaowen/yufogongde.html</loc><lastmod>2026-11-22</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://shifu-shuman.org/jiaowen/zhuerbudong.html</loc><lastmod>2026-11-22</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shifu-shuman.org/articles/bantubufei.html</loc><lastmod>2026-11-22</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shifu-shuman.org/articles/fanfan.html</loc><lastmod>2026-11-22</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shifu-shuman.org/articles/fangwei.html</loc><lastmod>2026-11-22</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shifu-shuman.org/articles/fodan.html</loc><lastmod>2026-11-22</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shifu-shuman.org/articles/jueyuan.html</loc><lastmod>2026-11-22</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shifu-shuman.org/articles/yufogongde.html</loc><lastmod>2026-11-22</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://shifu-shuman.org/articles/zhuerbudong.html</loc><lastmod>2026-11-22</lastmod><changefreq>yearly</changefreq><priority>0.5</priority></url>
 </urlset>
