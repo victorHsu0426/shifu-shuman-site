@@ -85,3 +85,8 @@ footer{border-top:1px solid var(--line);padding:28px var(--pad);text-align:cente
   border:1px solid rgba(255,255,255,.4);border-radius:999px;line-height:1}
 .lb-bar a.dl{font-size:16px;background:var(--accent);border-color:var(--accent)}
 .lb-count{color:rgba(255,255,255,.7);font-size:14px}
+
+/* ---------- 簡繁切換 ---------- */
+.lang-btn{display:inline-flex;align-items:center;justify-content:center;
+  min-width:44px;min-height:44px;padding:6px 14px;margin:0;border:1px solid var(--line);
+  border-radius:999px;background:#fff;color:var(--accent-d);font-size:15px;cursor:pointer}
