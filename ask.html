@@ -1,0 +1,398 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>法語問心｜向見額法師提問・殊曼讀心</title><meta name="theme-color" content="#faf7f0">
+<meta name="description" content="輸入您心中的煩惱或佛學疑問，從見額法師 500 多部 YouTube 開示與時間軸片段中，為您挑選最契合的 3 部影片解答。">
+<link rel="canonical" href="https://shifu-shuman.org/ask.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="殊曼讀心">
+<meta property="og:title" content="法語問心｜輸入問題，找到見額法師最契合的 3 部開示">
+<meta property="og:description" content="輸入您心中的煩惱或佛學疑問，從見額法師 500 多部 YouTube 開示與片段中挑選最契合的 3 部解答。">
+<meta property="og:url" content="https://shifu-shuman.org/ask.html">
+<meta property="og:image" content="https://shifu-shuman.org/images/banner-buzaihu-bupa.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-MZXHTLMV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
+<link rel="stylesheet" href="style.css">
+<style>
+.ask-hero{text-align:center;padding:24px 12px 10px}
+.ask-hero h1{font-size:1.75rem;margin:0 0 8px;line-height:1.35}
+.ask-hero .sub{color:var(--muted);font-size:1rem;margin:0 auto;max-width:640px}
+.ask-box{display:flex;gap:10px;margin:18px 0 12px;flex-wrap:wrap}
+.ask-input{flex:1;min-width:220px;padding:14px 18px;font-size:17px;border:1.5px solid var(--accent);border-radius:999px;background:#fff;color:var(--ink);outline:none;font-family:inherit}
+.ask-input:focus{box-shadow:0 0 0 3px rgba(138,109,59,.18)}
+.ask-submit{min-height:50px;padding:12px 26px;margin:0;border-radius:999px;border:0;background:var(--accent);color:#fff;font-size:17px;font-weight:700;cursor:pointer}
+.ask-submit:hover{background:var(--accent-d)}
+@media(max-width:559px){.ask-submit{width:100%}}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;align-items:center}
+.chip-label{font-size:.88rem;color:var(--muted);margin-right:4px}
+.chip{border:1px solid var(--line);background:#fdfbf6;color:var(--accent-d);border-radius:999px;padding:6px 14px;font-size:.92rem;cursor:pointer;transition:all .2s}
+.chip:hover,.chip.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.filter-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px;padding-top:12px;border-top:1px dashed var(--line);font-size:.9rem;color:var(--muted)}
+.fbtn{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:4px 12px;font-size:.86rem;cursor:pointer}
+.fbtn.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.res-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px;margin:22px 0 12px}
+.res-head h2{margin:0;font-size:1.3rem}
+.res-grid{display:grid;gap:18px}
+.rcard{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:grid;gap:0;box-shadow:0 2px 8px rgba(60,45,20,.05)}
+@media(min-width:740px){.rcard{grid-template-columns:300px 1fr}}
+.rthumb{position:relative;background:#1a1612;display:block;overflow:hidden;min-height:175px}
+.rthumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}
+.rcard:hover .rthumb img{transform:scale(1.03)}
+.rbadge{position:absolute;left:10px;top:10px;background:rgba(20,14,8,.78);color:#fff;font-size:.78rem;padding:3px 10px;border-radius:999px;backdrop-filter:blur(3px)}
+.rdur{position:absolute;right:10px;bottom:10px;background:rgba(20,14,8,.82);color:#fff;font-size:.8rem;padding:2px 8px;border-radius:6px}
+.rbody{padding:18px 20px;display:flex;flex-direction:column;justify-content:space-between}
+.rrank{display:inline-block;font-size:.8rem;font-weight:700;color:var(--accent-d);background:#fdf8ec;border:1px solid var(--line);border-radius:999px;padding:2px 10px;margin-right:6px}
+.rcat{display:inline-block;font-size:.8rem;color:var(--muted);background:#f6f2ea;border-radius:999px;padding:2px 10px;margin-right:6px}
+.rtitle{font-size:1.2rem;font-weight:700;margin:8px 0;line-height:1.45;color:var(--ink)}
+.rtitle a{color:inherit;text-decoration:none}
+.rtitle a:hover{color:var(--accent-d);text-decoration:underline}
+.rdesc{font-size:.93rem;color:var(--muted);margin:4px 0 10px;line-height:1.65}
+.ch-box{background:#faf7f0;border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:8px 0 12px}
+.ch-box .ch-head{font-size:.82rem;font-weight:700;color:var(--accent-d);margin-bottom:6px}
+.ch-list{list-style:none;padding:0;margin:0}
+.ch-list li{margin:5px 0;font-size:.92rem;line-height:1.5}
+.ch-link{display:inline-flex;align-items:center;gap:6px;text-decoration:none;color:var(--ink);padding:3px 8px;border-radius:8px;transition:background .15s}
+.ch-link:hover{background:#efe7d6;color:var(--accent-d)}
+.ch-time{font-family:monospace;font-weight:700;color:var(--accent-d);background:#fff;border:1px solid var(--line);padding:1px 7px;border-radius:6px;font-size:.84rem}
+.hl{background:#fff0b3;padding:0 2px;border-radius:3px;color:#2b2b2b}
+.ract{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.ract .btn{margin:0}
+</style></head><body>
+<header><div class="nav"><a class="brand" href="index.html">殊曼讀心<small>shifu-shuman.org</small></a><input type="checkbox" id="menu-toggle"><label for="menu-toggle" class="menu-btn" aria-label="選單">☰</label><nav class="links"><a href="index.html">首頁</a><a href="about-me.html">見額法師</a><a href="dharma-events.html">法訊</a><a href="dharma-talks.html">佛法覺音</a><a href="shorts.html">短開示</a><a href="ask.html">法語問心</a><a href="pilgrimage.html">菩薩覺旅</a><a href="articles/index.html">殊曼覺文</a><a href="faq.html">菩提覺見</a><a href="books.html">出版著作</a><a href="wallpaper.html">法語桌布下載</a><a href="english.html">English</a><button id="lang-toggle" class="lang-btn" aria-label="切換簡繁體">简</button></nav></div></header>
+<main>
+<div class="ask-hero">
+  <h1>法語問心｜您今天心裡有什麼疑問？</h1>
+  <p class="sub">輸入您的生活煩惱、心事或佛學問題，從見額法師 500 多部 YouTube 開示與章節片段中，為您挑選最契合的 3 部解答。</p>
+</div>
+
+<div class="card">
+  <form id="ask-form" class="ask-box" onsubmit="return false;">
+    <input id="ask-input" class="ask-input" type="search" placeholder="例如：睡不好很焦慮、很在意別人眼光、如何放下執著、怎麼打坐……" autocomplete="off">
+    <button id="ask-btn" class="ask-submit" type="submit">尋找 3 部開示</button>
+  </form>
+
+  <div class="chip-row">
+    <span class="chip-label">常見提問：</span>
+    <button type="button" class="chip" data-q="很在意別人眼光，被貼標籤怎麼辦">在意別人眼光</button>
+    <button type="button" class="chip" data-q="心很亂、焦慮睡不好，如何靜心安住">焦慮心亂想靜下來</button>
+    <button type="button" class="chip" data-q="人際關係衝突、受委屈放不下仇恨">人際委屈與放下</button>
+    <button type="button" class="chip" data-q="面對無常、生病或親人離世的恐懼">面對無常與生死</button>
+    <button type="button" class="chip" data-q="初學如何打坐靜坐、妄想很多怎麼調心">初學打坐怎麼調心</button>
+    <button type="button" class="chip" data-q="什麼是空性與無我？金剛經怎麼用">金剛經與空性無我</button>
+    <button type="button" class="chip" data-q="工作退休迷惘、怕做錯決定內耗">人生選擇與拒絕內耗</button>
+    <button type="button" class="chip" data-q="好心幫忙卻害了對方？真正的慈悲是什麼">善良與慈悲的界線</button>
+  </div>
+
+  <div class="filter-row">
+    <span>偏好長度：</span>
+    <button type="button" class="fbtn on" data-mode="all">自動推薦（長短兼顧）</button>
+    <button type="button" class="fbtn" data-mode="short">先看 1–3 分鐘短開示</button>
+    <button type="button" class="fbtn" data-mode="video">深入聽完整講經（含時間軸片段）</button>
+  </div>
+</div>
+
+<div id="res-wrap">
+  <div class="res-head">
+    <h2 id="res-title">為您推薦的 3 部開示</h2>
+    <span class="meta" id="res-meta">載入法音題庫中……</span>
+  </div>
+  <div id="res-grid" class="res-grid"></div>
+</div>
+</main>
+
+<script>
+(function(){
+  var DB = [];
+  var currentMode = "all";
+
+  // 生活白話 ↔ 佛法同義詞擴展表
+  var SYNONYMS = [
+    ["焦慮","不安","緊張","心亂","煩躁","失眠","睡不著","壓力","恐懼","害怕","不要怕","安心","安住","靜心","平常心","定力"],
+    ["眼光","標籤","批評","被罵","流言","別人怎麼看","比較","自卑","傲慢","優越感","做自己","不在乎","分別心","內耗"],
+    ["生氣","憤怒","仇恨","怨恨","委屈","原諒","傷害","報復","刀子口","溝通","說話","人際","關係","家庭","父母","教養","忍辱","慈悲"],
+    ["執著","放不下","放下","想太多","算計","糾結","卡住","痛苦","煩惱","轉念","解脫","自在","隨緣"],
+    ["無常","失去","過世","往生","死亡","生死","生病","老病","失智","助念","回向","因果","業力","宿命","命運"],
+    ["打坐","靜坐","禪修","冥想","妄想","雜念","昏沉","盤腿","呼吸","數息","觀心","止觀","半日禪","正念"],
+    ["空性","無我","緣起","假有","中道","三諦","三觀","天台","始終心要","般若","金剛經","六如偈","如幻","無相"],
+    ["工作","職場","退休","賺錢","名利","選擇","迷惘","方向","精進","拜佛","誦經","普門品","法華經","六祖壇經","華嚴經","戒律","十善","八關齋戒"]
+  ];
+
+  var STOP = {"請問":1,"師父":1,"法師":1,"見額":1,"什麼":1,"怎麼":1,"如何":1,"為什麼":1,"可以":1,"應該":1,"覺得":1,"自己":1,"一直":1,"一個":1,"我們":1,"你們":1,"他們":1,"這個":1,"那個":1,"怎麼辦":1,"好嗎":1,"嗎":1,"呢":1,"吧":1,"啊":1,"的":1,"了":1,"是":1,"在":1,"有":1,"和":1,"與":1,"或":1,"都":1,"很":1,"太":1,"不":1};
+
+  function fmtDur(sec){
+    sec = parseInt(sec,10) || 0;
+    if(!sec) return "";
+    var h = Math.floor(sec/3600), m = Math.floor((sec%3600)/60), s = sec%60;
+    if(h > 0) return h + "小時" + (m<10?"0":"") + m + "分";
+    return m + "分" + (s<10?"0":"") + s + "秒";
+  }
+
+  function extractTokens(q){
+    q = (q || "").trim().toLowerCase();
+    if(!q) return {direct:[], expanded:[]};
+    var clean = q.replace(/[，。！？、；：「」『』（）()【】《》#｜|.,!?;:'"\s]+/g, " ").trim();
+    var parts = clean.split(" ").filter(Boolean);
+    var direct = [];
+    var seen = {};
+    function addD(w){
+      if(!w || w.length < 2 || STOP[w] || seen[w]) return;
+      seen[w] = 1;
+      direct.push(w);
+    }
+    // 先加入整段詞與各分詞
+    for(var i=0;i<parts.length;i++){
+      var p = parts[i];
+      if(p.length <= 4) addD(p);
+      // 檢查是否包含同義詞表裡的詞彙
+      for(var g=0;g<SYNONYMS.length;g++){
+        for(var k=0;k<SYNONYMS[g].length;k++){
+          var kw = SYNONYMS[g][k].toLowerCase();
+          if(p.indexOf(kw) !== -1) addD(kw);
+        }
+      }
+      // 2字滑動切詞（處理中文連續句子）
+      if(/[\u4e00-\u9fa5]/.test(p) && p.length >= 2){
+        for(var j=0;j<p.length-1;j++){
+          var bi = p.slice(j, j+2);
+          if(!STOP[bi]) addD(bi);
+        }
+      } else {
+        addD(p);
+      }
+    }
+    // 同義詞擴展
+    var expanded = [];
+    var expSeen = {};
+    for(var g=0;g<SYNONYMS.length;g++){
+      var group = SYNONYMS[g];
+      var hit = false;
+      for(var k=0;k<group.length;k++){
+        var w = group[k].toLowerCase();
+        if(q.indexOf(w) !== -1 || seen[w]){ hit = true; break; }
+      }
+      if(hit){
+        for(var k=0;k<group.length;k++){
+          var ew = group[k].toLowerCase();
+          if(!seen[ew] && !expSeen[ew]){
+            expSeen[ew] = 1;
+            expanded.push(ew);
+          }
+        }
+      }
+    }
+    return {direct: direct, expanded: expanded};
+  }
+
+  function highlight(text, tokens){
+    if(!text) return "";
+    var safe = text.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+    var words = tokens.direct.slice(0, 8);
+    words.sort(function(a,b){return b.length - a.length;});
+    for(var i=0;i<words.length;i++){
+      var w = words[i].replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      if(w.length >= 2){
+        safe = safe.replace(new RegExp("(" + w + ")", "gi"), '<span class="hl">$1</span>');
+      }
+    }
+    return safe;
+  }
+
+  function scoreItem(item, tokens){
+    var score = 0;
+    var titleL = (item.title || "").toLowerCase();
+    var descL = (item.desc || "").toLowerCase();
+    var catL = (item.cats || []).join(" ").toLowerCase();
+    var matchedCh = [];
+
+    // 直接詞命中
+    for(var i=0;i<tokens.direct.length;i++){
+      var w = tokens.direct[i];
+      var weight = w.length >= 3 ? 1.4 : 1.0;
+      if(titleL.indexOf(w) !== -1) score += 12 * weight;
+      if(catL.indexOf(w) !== -1) score += 7 * weight;
+      if(descL.indexOf(w) !== -1) score += 5 * weight;
+    }
+
+    // 同義詞延伸命中
+    for(var i=0;i<tokens.expanded.length;i++){
+      var ew = tokens.expanded[i];
+      if(titleL.indexOf(ew) !== -1) score += 4.5;
+      if(catL.indexOf(ew) !== -1) score += 2.5;
+      if(descL.indexOf(ew) !== -1) score += 2;
+    }
+
+    // 時間軸章節精準命中
+    if(item.ch && item.ch.length){
+      for(var c=0;c<item.ch.length;c++){
+        var ch = item.ch[c];
+        var cl = ch.l.toLowerCase();
+        var chScore = 0;
+        for(var i=0;i<tokens.direct.length;i++){
+          var w = tokens.direct[i];
+          if(cl.indexOf(w) !== -1) chScore += (w.length >= 3 ? 14 : 9);
+        }
+        for(var i=0;i<tokens.expanded.length;i++){
+          var ew = tokens.expanded[i];
+          if(cl.indexOf(ew) !== -1) chScore += 3.5;
+        }
+        if(chScore > 0){
+          matchedCh.push({t: ch.t, ts: ch.ts, l: ch.l, s: chScore});
+        }
+      }
+      matchedCh.sort(function(a,b){return b.s - a.s;});
+      if(matchedCh.length){
+        score += matchedCh[0].s + Math.min(matchedCh.length - 1, 2) * 3;
+      }
+    }
+
+    // 偏好模式微調
+    if(currentMode === "short" && item.type !== "short") score *= 0.25;
+    if(currentMode === "video" && item.type !== "video") score *= 0.25;
+
+    return {item: item, score: score, matchedCh: matchedCh.slice(0, 3)};
+  }
+
+  function pickTop3(q){
+    var tokens = extractTokens(q);
+    var scored = [];
+    for(var i=0;i<DB.length;i++){
+      var r = scoreItem(DB[i], tokens);
+      if(r.score > 0) scored.push(r);
+    }
+    scored.sort(function(a,b){return b.score - a.score;});
+
+    // 若沒有任何字面命中，給出預設最受歡迎的安頓三講
+    if(!scored.length){
+      var defaults = ["6waz7csBgOg", "mp4HNYH7Saw", "N6mARZWYGu4", "LFQRgKjTrsM"];
+      for(var i=0;i<DB.length;i++){
+        if(defaults.indexOf(DB[i].id) !== -1){
+          scored.push({item: DB[i], score: 1, matchedCh: (DB[i].ch||[]).slice(0,2)});
+        }
+      }
+    }
+
+    // 在「自動推薦」模式下，確保長片與短片兼顧且不重複同系列塞滿
+    var picked = [];
+    var usedId = {};
+    for(var i=0;i<scored.length && picked.length < 3;i++){
+      var cand = scored[i];
+      if(usedId[cand.item.id]) continue;
+      picked.push(cand);
+      usedId[cand.item.id] = 1;
+    }
+    return {picked: picked, totalMatched: scored.length, tokens: tokens};
+  }
+
+  function render(q){
+    if(!DB.length) return;
+    var res = pickTop3(q);
+    var grid = document.getElementById("res-grid");
+    var titleEl = document.getElementById("res-title");
+    var metaEl = document.getElementById("res-meta");
+
+    if(q && q.trim()){
+      titleEl.textContent = "針對「" + q.trim() + "」為您挑選的 3 部開示";
+      metaEl.textContent = "從 509 部開示與 323 個時間軸片段中檢索出 " + res.totalMatched + " 部相關法音";
+    } else {
+      titleEl.textContent = "初次到訪・為您推薦的 3 部入門開示";
+      metaEl.textContent = "题庫已載入：共 509 部開示、323 個時間軸章節片段";
+    }
+
+    var rankLabels = ["第一推薦｜最契合主題", "第二推薦｜延伸觀照", "第三推薦｜日常落實"];
+    grid.innerHTML = res.picked.map(function(entry, idx){
+      var v = entry.item;
+      var isShort = v.type === "short";
+      var badge = isShort ? "短開示 · 1–3 分鐘" : "完整講經開示";
+      var dur = fmtDur(v.dur);
+      var cats = (v.cats && v.cats.length ? v.cats : (isShort ? ["短開示"] : ["講經開示"])).slice(0,2);
+      var firstCh = entry.matchedCh && entry.matchedCh.length ? entry.matchedCh[0] : null;
+      var watchUrl = "https://www.youtube.com/watch?v=" + v.id + (firstCh ? "&t=" + firstCh.t + "s" : "");
+      var thumb = "https://i.ytimg.com/vi/" + v.id + "/hqdefault.jpg";
+
+      var chHtml = "";
+      var chToShow = entry.matchedCh.length ? entry.matchedCh : (v.ch ? v.ch.slice(0, 3) : []);
+      if(chToShow.length){
+        chHtml = '<div class="ch-box"><div class="ch-head">' +
+          (entry.matchedCh.length ? '🎯 影片內直接解答您問題的片段（點時間直接跳轉）：' : '📑 本片重點章節片段：') +
+          '</div><ul class="ch-list">' +
+          chToShow.map(function(c){
+            var u = "https://www.youtube.com/watch?v=" + v.id + "&t=" + c.t + "s";
+            return '<li><a class="ch-link" href="' + u + '" target="_blank" rel="noopener"><span class="ch-time">▶ ' + c.ts + '</span><span>' + highlight(c.l, res.tokens) + '</span></a></li>';
+          }).join("") +
+          '</ul></div>';
+      }
+
+      var primaryBtnText = firstCh ? ("從 " + firstCh.ts + " 精華片段開始看") : (isShort ? "觀看短開示" : "觀看完整開示");
+
+      return '<div class="rcard">' +
+        '<a class="rthumb" href="' + watchUrl + '" target="_blank" rel="noopener">' +
+          '<img src="' + thumb + '" alt="" loading="lazy">' +
+          '<span class="rbadge">' + badge + '</span>' +
+          (dur ? '<span class="rdur">' + dur + '</span>' : '') +
+        '</a>' +
+        '<div class="rbody">' +
+          '<div>' +
+            '<div><span class="rrank">' + rankLabels[idx] + '</span>' +
+              cats.map(function(c){return '<span class="rcat">' + c + '</span>';}).join("") +
+            '</div>' +
+            '<h3 class="rtitle"><a href="' + watchUrl + '" target="_blank" rel="noopener">' + highlight(v.title, res.tokens) + '</a></h3>' +
+            (v.desc ? '<p class="rdesc">' + highlight(v.desc, res.tokens) + '</p>' : '') +
+            chHtml +
+          '</div>' +
+          '<div class="ract">' +
+            '<a class="btn solid" href="' + watchUrl + '" target="_blank" rel="noopener">▶ ' + primaryBtnText + '</a>' +
+            (firstCh ? '<a class="btn" href="https://www.youtube.com/watch?v=' + v.id + '" target="_blank" rel="noopener">從頭觀看全片</a>' : '') +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    }).join("");
+  }
+
+  var input = document.getElementById("ask-input");
+  document.getElementById("ask-form").addEventListener("submit", function(){
+    render(input.value);
+  });
+  input.addEventListener("input", function(){
+    render(input.value);
+  });
+
+  var chips = document.querySelectorAll(".chip");
+  for(var i=0;i<chips.length;i++){
+    chips[i].addEventListener("click", function(){
+      for(var j=0;j<chips.length;j++) chips[j].classList.remove("active");
+      this.classList.add("active");
+      var q = this.getAttribute("data-q");
+      input.value = q;
+      render(q);
+    });
+  }
+
+  var fbtns = document.querySelectorAll(".fbtn");
+  for(var i=0;i<fbtns.length;i++){
+    fbtns[i].addEventListener("click", function(){
+      for(var j=0;j<fbtns.length;j++) fbtns[j].classList.remove("on");
+      this.classList.add("on");
+      currentMode = this.getAttribute("data-mode");
+      render(input.value);
+    });
+  }
+
+  fetch("dharma-ask.json")
+    .then(function(r){return r.json();})
+    .then(function(data){
+      DB = data;
+      var params = new URLSearchParams(location.search);
+      var initQ = params.get("q") || "很在意別人眼光，被貼標籤怎麼辦";
+      input.value = initQ;
+      render(initQ);
+    })
+    .catch(function(){
+      document.getElementById("res-meta").textContent = "題庫載入失敗，請稍後重試。";
+    });
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/opencc-js@1/dist/umd/full.js" defer></script>
+<script src="js/lang.js" defer></script>
+<footer>Copyright © 2026 殊曼讀心<br>Email : buddhaworld2000@gmail.com</footer></body></html>
